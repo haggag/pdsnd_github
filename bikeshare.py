@@ -240,7 +240,8 @@ def main():
             while True:
                 if show_data.lower() == 'no':
                     break
-                elif show_data.lower() == 'yes':
+
+                if show_data.lower() == 'yes':
                     end_reached = print_data(df, start, PAGE_LENGTH)
                     if end_reached:
                         break
