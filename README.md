@@ -1,17 +1,24 @@
->**Note**: Please **fork** the current Udacity repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine. Later, as a part of the project "Post your Work on Github", you will push your proposed changes to the remote repository in your Github account.
+# Bikeshare
 
-### Date created
-Include the date you created this project and README file.
+Bikeshare is a simple script that analyzes the Bikeshare dataset and displays valuable statistics.
 
-### Project Title
-Replace the Project Title
+## Dependencies
 
-### Description
-Describe what your project is about and what it does
+This project has the following requirements:
+* Python 3.6 or higher
+* Pandas
+* Bikeshare dataset (see the dataset section)
 
-### Files used
-Include the files used
+## Installation
 
-### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+Clone the GitHub repository and execute the main script:
 
+```
+$ git clone https://github.com/haggag/pdsnd_github.git
+$ cd pdsnd_github
+$ python ./bikeshare.py
+```
+
+## License 
+
+The Bikeshare program is distributed under the MIT license.
