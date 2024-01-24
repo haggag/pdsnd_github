@@ -45,7 +45,7 @@ The following descriptive statistics are displayed:
 
 ## Dataset
 
-This project analyzes data provided by Motivate [link](https://motivateco.com "Motivate Website"), a bike share system provider for many major cities in the United States, to uncover bike share usage patterns.
+This project analyzes data provided by [Motivate](https://motivateco.com "Motivate Website"), a bike share system provider for many major cities in the United States, to uncover bike share usage patterns.
 
 The required dataset was created by randomly selecting data for the first six months of 2017 provided for Chicago, New York City, and Washington, DC. The data can be downloaded from Udacity as 3 CSV files. All three files contain the same core six columns:
 
