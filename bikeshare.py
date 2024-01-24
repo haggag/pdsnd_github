@@ -114,8 +114,7 @@ def time_stats(df):
     start_hours = df['Start Time'].dt.hour
     print('The most common start hour is:', start_hours.mode()[0])
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print_benchmark(start_time)
 
 
 def station_stats(df):
@@ -136,8 +135,7 @@ def station_stats(df):
     stations = start_end.mode()[0].split('+')
     print('Most requent combination of start station and end station trip is:', stations[0], 'AND', stations[1])
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print_benchmark(start_time)
 
 
 def trip_duration_stats(df):
@@ -153,8 +151,7 @@ def trip_duration_stats(df):
     print('Total travel time:', round(df['Trip Duration'].sum()), 'seconds')
     print('Mean travel time:', round(df['Trip Duration'].mean()), 'seconds')
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print_benchmark(start_time)
 
 
 def user_stats(df):
@@ -187,8 +184,7 @@ def user_stats(df):
         print('Most Recent Birth Year:', int(max_year))
         print('Most Common Birth Year:', int(common_year))
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print_benchmark(start_time)
 
 
 def print_data(df, start, count=5):
@@ -208,6 +204,18 @@ def print_data(df, start, count=5):
     eof = df_page.shape[0] < count
 
     return eof
+
+
+def print_benchmark(start_time):
+    """Prints the elapsed time in seconds since the given timestamp.
+
+    Args:
+        (float) start_time - time when the function started executing.
+    """
+
+    print("\nThis took %s seconds." % (time.time() - start_time))
+    print('-'*40)
+
 
 
 def main():
