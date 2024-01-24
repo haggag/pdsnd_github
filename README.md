@@ -43,6 +43,24 @@ The following descriptive statistics are displayed:
     * Counts of each gender (only available for NYC and Chicago).
     * Earliest, most recent, most common birth year (only available for NYC and Chicago).
 
+## Dataset
+
+This project analyzes data provided by Motivate [link](https://motivateco.com "Motivate Website"), a bike share system provider for many major cities in the United States, to uncover bike share usage patterns.
+
+The required dataset was created by randomly selecting data for the first six months of 2017 provided for Chicago, New York City, and Washington, DC. The data can be downloaded from Udacity as 3 CSV files. All three files contain the same core six columns:
+
+* Start Time (e.g., 2017-01-01 00:07:57)
+* End Time (e.g., 2017-01-01 00:20:53)
+* Trip Duration (in seconds - e.g., 776)
+* Start Station (e.g., Broadway & Barry Ave)
+* End Station (e.g., Sedgwick St & North Ave)
+* User Type (Subscriber or Customer)
+
+The Chicago and New York City files also have the following two columns:
+
+* Gender
+* Birth Year
+
 ## License 
 
 The Bikeshare program is distributed under the MIT license.
