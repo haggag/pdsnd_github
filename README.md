@@ -19,6 +19,10 @@ $ cd pdsnd_github
 $ python ./bikeshare.py
 ```
 
+## Usage
+
+The Bikeshare program works by executing the `bikeshare.py` script. It then interactively asks the user for the required filters. Finally, the statistics are computed and displayed on the terminal.
+
 ## License 
 
 The Bikeshare program is distributed under the MIT license.
