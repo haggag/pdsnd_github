@@ -24,14 +24,17 @@ def get_filters():
     # Get user input for city. Keep trying until one of the values (chicago, new york city, or washington) is chosen.
     valid_cities = ('chicago', 'new york city', 'washington')
     while True:
-        city = input('\nWhat city are you interested in? Enter "Chicago", "New York City", or "Washington".\n')
+        city = input('\nWhat city are you interested in? Enter "Chicago",'
+                     ' "New York City", or "Washington".\n')
         city = city.strip().lower()
         if city in valid_cities:
             break
 
     # Get user input for month. Keep trying until one of the values (all, january, february, ... , june) is chosen.
     while True:
-        month = input('\nWhat month are you interested in? Enter month name from the set [January to June] or "all" to apply no month filter.\n')
+        month = input('\nWhat month are you interested in? Enter month name'
+                      ' from the set [January to June] or "all" to apply no'
+                      ' month filter.\n')
         month = month.strip().lower()
         if month == 'all' or month in MONTHS:
             break
@@ -39,7 +42,9 @@ def get_filters():
 
     # Get user input for day of week. Keep trying until one of the values (all, monday, tuesday, ... sunday) is chosen.
     while True:
-        day = input('\nWhat day are you interested in? Enter day name from the set [Monday to Saturday] or "all" to apply no day filter.\n')
+        day = input('\nWhat day are you interested in? Enter day name from'
+                    ' the set [Monday to Saturday] or "all" to apply no day'
+                    ' filter.\n')
         day = day.strip().title()
         if day == 'All' or day in DAYS:
             break
