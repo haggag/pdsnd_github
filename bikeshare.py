@@ -1,3 +1,7 @@
+"""
+This script analzyes the bikeshare data and prints valuable statistics.
+"""
+
 import time
 import calendar
 import pandas as pd
