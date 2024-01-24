@@ -61,6 +61,12 @@ The Chicago and New York City files also have the following two columns:
 * Gender
 * Birth Year
 
+## Credits
+
+The following resources were consulted during the project implementation:
+* Udacity Python lessons
+* Pandas documentation
+
 ## License 
 
 The Bikeshare program is distributed under the MIT license.
