@@ -214,7 +214,7 @@ def print_benchmark(start_time):
         (float) start_time - time when the function started executing.
     """
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print(f'\nThis took {time.time() - start_time} seconds.')
     print('-'*40)
 
 
@@ -234,7 +234,8 @@ def main():
             trip_duration_stats(df)
             user_stats(df)
 
-            show_data = input('\nWould you like to see {} lines of raw data? Enter yes or no.\n'.format(PAGE_LENGTH))
+            show_data = input(f'\nWould you like to see {PAGE_LENGTH} lines'
+                              ' of raw data? Enter yes or no.\n')
             start = 0
             while True:
                 if show_data.lower() == 'no':
@@ -244,7 +245,8 @@ def main():
                     if end_reached:
                         break
 
-                show_data = input('\nWould you like to see the next {} lines of raw data? Enter yes or no.\n'.format(PAGE_LENGTH))
+                show_data = input('\nWould you like to see the next'
+                                  ' {PAGE_LENGTH} lines of raw data? Enter yes or no.\n')
                 start += PAGE_LENGTH
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
