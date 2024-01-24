@@ -29,7 +29,8 @@ def get_filters():
     #  (chicago, new york city, or washington) is chosen.
     valid_cities = ('chicago', 'new york city', 'washington')
     while True:
-        city = input('\nWhat city are you interested in? Enter "Chicago", "New York City", or "Washington".\n')
+        city = input('\nWhat city are you interested in? Enter "Chicago",'
+                     ' "New York City", or "Washington".\n')
         city = city.strip().lower()
         if city in valid_cities:
             break
@@ -37,7 +38,9 @@ def get_filters():
     # Get user input for month. Keep trying until one of the values
     #  (all, january, february, ... , june) is chosen.
     while True:
-        month = input('\nWhat month are you interested in? Enter month name from the set [January to June] or "all" to apply no month filter.\n')
+        month = input('\nWhat month are you interested in? Enter month name'
+                      ' from the set [January to June] or "all" to apply no'
+                      ' month filter.\n')
         month = month.strip().lower()
         if month == 'all' or month in MONTHS:
             break
@@ -46,7 +49,9 @@ def get_filters():
     # Get user input for day of week. Keep trying until one of the values
     # (all, monday, tuesday, ... sunday) is chosen.
     while True:
-        day = input('\nWhat day are you interested in? Enter day name from the set [Monday to Saturday] or "all" to apply no day filter.\n')
+        day = input('\nWhat day are you interested in? Enter day name from'
+                    ' the set [Monday to Saturday] or "all" to apply no day'
+                    ' filter.\n')
         day = day.strip().title()
         if day == 'All' or day in DAYS:
             break
@@ -116,8 +121,7 @@ def time_stats(df):
     start_hours = df['Start Time'].dt.hour
     print('The most common start hour is:', start_hours.mode()[0])
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print_benchmark(start_time)
 
 
 def station_stats(df):
@@ -136,10 +140,10 @@ def station_stats(df):
     # Display most frequent combination of start station and end station trip.
     start_end = df['Start Station'] + '+' + df['End Station']
     stations = start_end.mode()[0].split('+')
-    print('Most requent combination of start station and end station trip is:', stations[0], 'AND', stations[1])
+    print('Most requent combination of start station and end station trip is:',
+          stations[0], 'AND', stations[1])
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print_benchmark(start_time)
 
 
 def trip_duration_stats(df):
@@ -155,8 +159,7 @@ def trip_duration_stats(df):
     print('Total travel time:', round(df['Trip Duration'].sum()), 'seconds')
     print('Mean travel time:', round(df['Trip Duration'].mean()), 'seconds')
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print_benchmark(start_time)
 
 
 def user_stats(df):
@@ -189,8 +192,7 @@ def user_stats(df):
         print('Most Recent Birth Year:', int(max_year))
         print('Most Common Birth Year:', int(common_year))
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print_benchmark(start_time)
 
 
 def print_data(df, start, count=5):
@@ -212,6 +214,18 @@ def print_data(df, start, count=5):
     return eof
 
 
+def print_benchmark(start_time):
+    """Prints the elapsed time in seconds since the given timestamp.
+
+    Args:
+        (float) start_time - time when the function started executing.
+    """
+
+    print(f'\nThis took {time.time() - start_time} seconds.')
+    print('-'*40)
+
+
+
 def main():
     """Main function of the program."""
 
@@ -227,17 +241,20 @@ def main():
             trip_duration_stats(df)
             user_stats(df)
 
-            show_data = input('\nWould you like to see {} lines of raw data? Enter yes or no.\n'.format(PAGE_LENGTH))
+            show_data = input(f'\nWould you like to see {PAGE_LENGTH} lines'
+                              ' of raw data? Enter yes or no.\n')
             start = 0
             while True:
                 if show_data.lower() == 'no':
                     break
-                elif show_data.lower() == 'yes':
+
+                if show_data.lower() == 'yes':
                     end_reached = print_data(df, start, PAGE_LENGTH)
                     if end_reached:
                         break
 
-                show_data = input('\nWould you like to see the next {} lines of raw data? Enter yes or no.\n'.format(PAGE_LENGTH))
+                show_data = input('\nWould you like to see the next'
+                                  ' {PAGE_LENGTH} lines of raw data? Enter yes or no.\n')
                 start += PAGE_LENGTH
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
